@@ -19,6 +19,9 @@ import { Private } from "./components/auth/Private";
 import Profile from "./components/auth/Profile";
 import List from "./components/generics/List";
 import RandomNumbers from "./components/restriction/RandomNumbers";
+import Toast from "./components/templateLiterals/Toast";
+import CustomButton from "./components/html/CustomButton";
+import Text from "./components/polymorphic/Text";
 
 function App() {
   const [value, setValue] = useState("");
@@ -84,6 +87,34 @@ function App() {
         }}
       />
       <RandomNumbers value={10} isPositive />
+      <Toast position="left-center" />
+      <CustomButton
+        variant="primary"
+        onClick={() => {
+          console.log("Primary Button clicked");
+        }}
+      >
+        Primary Button
+      </CustomButton>
+      <Text
+        size="lg"
+        as="h1"
+        onclick={(e) => {
+          console.log(`w`, e);
+        }}
+      >
+        Heading
+      </Text>
+      <Text
+        size="sm"
+        onclick={(e) => {
+          console.log(`event`, e);
+        }}
+        color="secondary"
+        as="label"
+      >
+        Label
+      </Text>
     </div>
   );
 }
